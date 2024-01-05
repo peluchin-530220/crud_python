@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django crud application</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        /* Estilo personalizado para el nav */
+        .navbar-custom {
+            background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+            color: white;
+        }
+
+        /* Estilo personalizado para los botones */
+        .btn-custom {
+            background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(45deg, #FF6347, #FF4500);
+            transform: scale(1.05);
+        }
+
+        /* Estilo personalizado para el footer */
+        .footer-custom {
+            background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+            color: white;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        /* Estilo para el enlace de "Iniciar Sesión" al final de la página */
+        .login-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .custom-img {
+    max-width: 15%; /* Establece el ancho máximo al 100% del contenedor */
+    height: auto;    /* La altura se ajustará automáticamente */
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'imagen/logoo.png' %}" alt=""class="img-fluid" style="max-width: 35px; height: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index">Menu</a>
+                    </li>
+                  
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tarea">Tarea Pendientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tarea_completas">Tarea Completadas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/crear_tarea">Crear Tarea</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cerrar_sesion">Cerrar_Sesion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registrate">Registrate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/iniciar_sesion">Iniciar Sesion</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+</body>
+</html>

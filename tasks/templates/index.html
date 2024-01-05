@@ -1,0 +1,40 @@
+
+    <!-- Barra de navegación -->
+    {% extends "base.html" %}
+    {% load static %}
+    {% block content %}
+    
+
+    <main class="container py-5">
+        <h2 class="text-center">ADMINISTRADOR DE TAREAS</h2>
+        <section class="card card-body text-center">
+            <div>
+                <img src="{% static 'imagen/logoo.png' %}" alt=""class="img-fluid" style="max-width: 200px; height: auto;">
+            </div>
+            
+            <P>
+                ¡Te damos la bienvenida a la plataforma de Gestión de Tareas definitiva! En un mundo lleno de demandas y responsabilidades, sabemos que tu tiempo es un recurso valioso y escaso. Nuestra misión es ayudarte a optimizar cada minuto y a tomar el control de tu vida de manera efectiva.
+
+                Imagina una herramienta que simplifique tus tareas diarias, te permita organizarte con facilidad y te ayude a alcanzar tus objetivos de manera constante. Eso es precisamente lo que ofrecemos. Nuestra plataforma de Gestión de Tareas es una solución todo en uno para la administración de tus compromisos, ya sea en el trabajo, en los estudios o en tu vida personal.
+            </P>
+            <p>
+                La gestión eficiente de tareas es esencial para mantener el orden y la productividad en nuestra vida cotidiana. Nuestra plataforma de administración de tareas está diseñada para brindarte las herramientas necesarias para organizar tu trabajo y tu tiempo de manera efectiva. Ya sea que necesites realizar un seguimiento de tus tareas personales, gestionar proyectos en equipo o simplemente mantenerte al tanto de tus actividades diarias, estamos aquí para ayudarte a simplificar tu vida.
+            </p>
+
+            <div class="text-center">
+                <a href="/iniciar_sesion/" class="btn btn-primary btn-custom">Iniciar Sesion</a>
+                <a href="/registrate/" class="btn btn-primary btn-custom">Registrate</a>
+            </div>
+        </section>
+</main>
+
+<footer class="footer text-center footer-custom fixed-bottom" style="padding: 5px;;">
+    &copy; 2023 Empleos 2023
+</footer>
+    
+
+
+
+    {% endblock %}
+  
+

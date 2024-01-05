@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<head>
+<style>
+    .gradient-custom-2 {
+ background: #fccb90;
+ background: -webkit-linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a );
+ background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+ }
+ .navbar-custom {
+    background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+    color: white;
+ }
+ /* Estilo personalizado para el footer */
+ .footer-custom {
+    background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+ }
+ .footer{
+     margin-top: 11%;
+ }
+ @media (min-width: 768px) {
+ .gradient-form {
+ height: 100vh !important;
+ }
+ }
+ @media (min-width: 769px) {
+ .gradient-custom-2 {
+ border-top-right-radius: .3rem;
+ border-bottom-right-radius: .3rem;
+ }
+ }
+ </style>
+</head>
+<body>
+      <!-- Barra de navegación -->
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body p-md-5 mx-md-4">
+                      {{error}}
+                      <div class="text-center">
+                        <img src="{% static 'imagen/logoo.png' %}" alt="" class="img-fluid" style="max-width: 100px; height: auto;">
+
+                          
+                        <h4 class="mt-1 mb-5 pb-1">Iniciar sesion</h4>
+                        
+                      </div>
+      
+                      <form action="/iniciar_sesion/" method="POST">
+                        {% csrf_token %}
+                        <p>Por favor, inicie sesión en su cuenta</p>
+                        <div class="form-outline mb-4">
+                        <input name="username" type="text" id="form2Example11" class="form-control"
+                            placeholder="Número de teléfono o dirección de correo electrónico" />
+                        <label class="form-label" for="form2Example11">Nombre de usuario</label>
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <input name="password" type="password" id="form2Example22" class="form-control" placeholder="Contraceña"/>
+                          <label class="form-label" for="form2Example22">Contraceña</label>
+                        </div>
+      
+                        <div class="text-center pt-1 mb-5 pb-1">
+                        <button  href="" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">iniciar sesion</button>
+                          
+                        </div>
+      
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                          <p class="mb-0 me-2">¿No tienes una cuenta?</p>
+                          <a href="/registrate" type="button" class="btn btn-outline-danger">Crear cuenta nueva</a>
+                        </div>
+      
+                      </form>
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                      <h4 class="mb-4">TAREAS 2023</h4>
+                      <p class="small mb-0">¡Te damos la bienvenida a la plataforma de Gestión de Tareas líder en el mercado! En un mundo cada vez más agitado y competitivo, sabemos que la gestión eficiente del tiempo y de las tareas es esencial para el éxito y la paz mental. Nuestra plataforma está diseñada para liberarte de la carga de las tareas diarias, permitiéndote concentrarte en lo que realmente importa..</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       <!-- Pie de página -->
+      
+    
+</body>
+{% endblock %}

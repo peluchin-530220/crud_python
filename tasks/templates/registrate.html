@@ -1,0 +1,119 @@
+
+  
+  
+
+
+    {% extends "base.html" %}
+    {% block content %}
+    <style>
+       
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-login {
+            background-color: #FF6347;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-login:hover {
+            background-color: #FF4500;
+        }
+
+        .btn-register {
+            color: #FF6347;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .btn-register:hover {
+            text-decoration: underline;
+        }
+        .navbar-custom {
+        background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+        color: white;
+    }
+    /* Estilo personalizado para el footer */
+    .footer-custom {
+        background: linear-gradient(to right,#eeae24,#ee7724, #ee7724, #d8363a);
+        color: white;
+        width: 100%;
+        padding: 20px 0; 
+    }
+    /* CSS personalizado */
+
+    </style>
+<head>
+    <body>
+        
+
+    <div class="container  ">
+        <div class="card mx-auto my-4 mb-4">
+            {{error}}
+            <h2 class="card-title">Registrate</h2>
+            <form action="/registrate/" method="POST">
+            {% csrf_token %}
+                <div class="mb-3">
+                    <input name="name" type="text" class="form-control" placeholder="Nombre" required>
+                </div>
+                <div class="mb-3">
+                    <input name="Apellido" type="text" class="form-control" placeholder="Apellido" required>
+                </div>
+                <div class="mb-3">
+                    <input name="username" type="text" class="form-control" placeholder="Numero de celular o correo electronico">
+                  </div>
+                <div class="mb-3">
+                    <input name="password1" type="password" class="form-control" placeholder="Contraseña" required>
+                </div>
+                <div class="mb-3">
+                    <input name="password2" type="password" class="form-control" placeholder="Confirmar Contraseña" required>
+                </div>
+                <div class="mb-3">
+                    <label for="birthdate" class="form-label text-white">Fecha de nacimiento</label>
+                    <input name="Fecha" type="date" class="form-control" id="birthdate">
+                </div>
+                <div class="mb-3">
+                <label class="form-check-label text-dark">
+                <input name="Masculino" type="radio" class="form-check-input custom-radio-orange" name="gender" value="male"> Masculino
+                </label>
+                <label class="form-check-label ms-4 text-dark">
+        <input name="Femenino" type="radio" class="form-check-input custom-radio-orange" name="gender" value="female"> Femenino
+    </label>
+</div>
+            
+
+                <button type="submit" href="" class="btn btn-primary w-100 btn-login">registrate</button>
+                <p><a href="/iniciar_sesion/" class="btn-register">inicio sesion</a></p>
+            </div>
+        </div>
+    </div>
+            </form>
+   
+</body>
+</head>
+    {% endblock %}
+
