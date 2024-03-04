@@ -10,6 +10,7 @@ Menu de mis tareas pendientes creadas
 creacion de tareas 
 [![66.jpg](https://i.postimg.cc/L82RZKyP/66.jpg)](https://postimg.cc/WhWxQKcp)
 PAGINA RESPONSIVE (el nav se ajusto que sea con botones)
+
 [![77.jpg](https://i.postimg.cc/FKkPr1jV/77.jpg)](https://postimg.cc/67wVzWb8)
 [![88.jpg](https://i.postimg.cc/m26NPBZX/88.jpg)](https://postimg.cc/ZCpygkdp)
 [![99.jpg](https://i.postimg.cc/J49HwnzL/99.jpg)](https://postimg.cc/8jmzMTvK)
